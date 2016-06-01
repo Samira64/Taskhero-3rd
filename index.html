@@ -1,12 +1,59 @@
  <!doctype html>
  <html>
- <head>
- <title>hardcore engineering!</title>
+  <head>
+    <title>hardcore engineering!</title>
     <link rel="stylesheet"  href= "./css/style.css"/>
-    <link rel="stylesheet"  href="font-awesome/css /font-awesome.min.css"/>
- <meta charset = "utf=8"/>
+    <link rel="stylesheet"  href="font-awesome/css/font-awesome.min.css"/>
+    <meta charset = "utf=8"/>
  </head>
- <body>
-    <script type="text/javascript" src= "./js/main.js"></script>
- </body>
- </html>
+<body>
+
+ <div class= "main-content">
+
+      <div class="main-heading">
+     	 <h1>TASK<span id="part2">HERO</span></h1>
+      </div> <!-- main-heading -->
+
+     <div class="task-hero-app">
+
+ 	    <div class="enter-new-task">
+ 	    <input id="new-task-input" type="text" placeholder="Enter your task here and press Enter">
+ 	    </div> <!-- enter-new-task -->
+
+     <div class="task-item-holder">
+
+ 	      <ul class="task-list">
+ 		    <li>
+ 			  <div class="check-box"><input type="checkbox"><div/>
+ 			  <div class="task-name">Buy groceries</div>
+ 			  <div class= "remove-circle"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+            </li>
+ 		    <li>
+ 			  <div class="check-box"><input type="checkbox"></div>
+ 			  <div class="task-name">Call dental clinic and make appointment</div>
+ 			  <div class="remove-circle"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+            </li>
+ 		    <li>
+ 			  <div class="check-box"><input type="checkbox"></div>
+ 			  <div class="task-name">Read the last chapter of JS book</div>
+ 			  <div class="remove=circle"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+            </li>
+ 		    <li>
+ 			  <div class="check-box"><input type="checkbox"></div>
+ 			  <div class="task-name">Learn more on Objects in JS</div>
+ 			  <div class="remove-circle"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+            </li>
+ 	      </ul> <!-- task-list -->
+     </div> <!-- task-item-holder -->
+
+     <footer>
+    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+    <p>Mark all as done</p>
+     </footer>
+
+     </div> <!-- task-hero-app -->
+ </div>  <!--main-content -->
+
+ <script type="text/javascript" src= "./js/main.js"></script>
+</body>
+</html>
