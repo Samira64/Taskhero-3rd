@@ -32,7 +32,7 @@ span#part2{
 	font-size: 16px;
 }
 
-ul.task-list{
+ul#task-list{
 	list-style: none;
 	font-size: 18px;
 	padding-left: 0px;
@@ -40,12 +40,12 @@ ul.task-list{
 	margin-top: 0px;
 }
 
-ul.task-list li{
+ul#task-list li{
 	border: solid 1px #00A651;
 	padding: 10px;
 }
 
-ul.task-list li .remove-circle{
+ul#task-list li .remove-circle{
 	float:right;
 	padding-right: 10px;
 }
