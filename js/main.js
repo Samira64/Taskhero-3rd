@@ -1,30 +1,41 @@
 
 
-
-
-function createTask(taskTitle) {
-    
-    var newTaskElement = document.createElement("li"); // now we have '<li></li>'
-    var textElement = document.createTextNode(taskTitle); // 'go buy coffee' or whatever is inside the taskTitle
-    newTaskElement.appendChild(textElement);
-    var list= document.getElementById("task-list");
-    list.appendChild(newTaskElement);
-    
-     // now we have '<li>go buy coffee</li>'    
-    //add the newTaskElement to the ul on the page that contains the tasks
-    //1- get the ul that contains the lis
-    //2- add the newTaskElement as its chidren
-    //3- commit and push. bye bye ok
-}
-
-
 var taskInput= document.getElementById("new-task-input");
 taskInput.addEventListener("keydown", handleKeyPress, true);
 
+function createTask(taskTitle) {
+    var newTaskElement = document.createElement("li");
+    var textElement = document.createTextNode(taskTitle);
+    var div1 = document.createElement("div");
+    div1.className += "check-box";
+    var input = document.createElement("input");
+    input.setAttribute("type","checkbox");
+    div1.appendChild(input);
+    var div2= document.createElement("div");
+    div2.className += "task-name";
+    div2.appendChild(textElement);
+    var div3 = document.createElement("div");
+    div3.className += "remove-circle";
+    var i = document.createElement("i");
+    i.className += "fa fa-trash";
+    div3.appendChild(i);
+
+    newTaskElement.appendChild(div1);
+    newTaskElement.appendChild(div3);  
+    newTaskElement.appendChild(div2);
+
+    var lists = document.getElementsByClassName("mamal");
+    lists[0].appendChild(newTaskElement);         
+}
+
+
 function handleKeyPress(e) {
     if (e.keyCode == "13") {
-
-       var taskTitle = taskInput.value;  
-       createTask(taskTitle); 
-    }
+     var taskTitle = taskInput.value;  
+     createTask(taskTitle);      
+ }
 };
+
+
+
+
