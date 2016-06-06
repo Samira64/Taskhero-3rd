@@ -19,22 +19,26 @@ function createTask(taskTitle) {
     var i = document.createElement("i");
     i.className += "fa fa-trash";
     div3.appendChild(i);
-
     newTaskElement.appendChild(div1);
-    newTaskElement.appendChild(div3);  
-    newTaskElement.appendChild(div2);
-
+    newTaskElement.appendChild(div2);  
+    newTaskElement.appendChild(div3);
     var lists = document.getElementsByClassName("mamal");
-    lists[0].appendChild(newTaskElement);         
+    lists[0].appendChild(newTaskElement);   
+
+    taskInput.value = "  ";
 }
 
 
 function handleKeyPress(e) {
     if (e.keyCode == "13") {
      var taskTitle = taskInput.value;  
-     createTask(taskTitle);      
+     createTask(taskTitle);  
+        
  }
+
+
 };
+
 
 
 
