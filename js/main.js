@@ -1,7 +1,7 @@
 
 
-var taskInput= document.getElementById("new-task-input");
-taskInput.addEventListener("keydown", handleKeyPress, true);
+document.getElementById("new-task-input").addEventListener("keydown", handleKeyPress, true);
+document.getElementById('remove-done').addEventListener('click', handleRemoveButtonClick);
 
 function createTask(taskTitle) {
     var newTaskElement = document.createElement("li");
@@ -28,11 +28,59 @@ function createTask(taskTitle) {
 
 function handleKeyPress(e) {
     if (e.keyCode == "13") {
-       var taskTitle = taskInput.value;  
-       createTask(taskTitle);  
-       taskInput.value = "";
-   }
+        var taskInput = document.getElementById("new-task-input");
+        var taskTitle = taskInput.value;  
+        createTask(taskTitle);  
+        taskInput.value = "";
+    }
 };
+
+
+function isCheckboxChecked(checkbox){
+    if (checkbox.checked){
+        return true;
+    } else {
+        return false;
+    }  
+};
+
+
+function handleRemoveButtonClick() {
+    var lists = document.querySelectorAll("li");
+    for (var i = 0; i < lists.length; i++) {
+        var checkboxDiv = lists[i].querySelector(".check-box");
+        var checkbox = checkboxDiv.querySelector("input");
+        checkedStatus = isCheckboxChecked(checkbox);
+        if (checkedStatus){
+            lists[i].parentNode.removeChild(lists[i]);
+        }
+    }  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
