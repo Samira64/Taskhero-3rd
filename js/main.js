@@ -26,6 +26,7 @@ function createTask(taskTitle) {
     lists.appendChild(newTaskElement);   
 };
 
+
 function handleKeyPress(e) {
     if (e.keyCode == "13") {
         var taskInput = document.getElementById("new-task-input");
@@ -37,15 +38,12 @@ function handleKeyPress(e) {
 
 
 function isCheckboxChecked(checkbox){
-    if (checkbox.checked){
-        return true;
-    } else {
-        return false;
-    }  
-};
+     //shorten the next four lines. you can write it in one line 
+     return(checkbox.checked ? true : false);
+ };
 
 
-function handleRemoveButtonClick() {
+ function handleRemoveButtonClick() {
     var lists = document.querySelectorAll("li");
     for (var i = 0; i < lists.length; i++) {
         var checkboxDiv = lists[i].querySelector(".check-box");
@@ -56,8 +54,6 @@ function handleRemoveButtonClick() {
         }
     }  
 };
-
-
 
 
 

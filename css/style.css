@@ -17,6 +17,7 @@ span#part2{
 }
 
 .task-hero-app{
+	position: relative;
 	width: 600px;
 	margin: auto;
 	background-color: #0E981E;
@@ -55,8 +56,11 @@ li .check-box, li .task-name, footer p{
 }
 
 footer{
-	margin-left: 10px;
 	margin-top: 100px;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
 }
+
 
 
