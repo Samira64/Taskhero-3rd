@@ -39,7 +39,7 @@ function handleKeyPress(e) {
 
 function isCheckboxChecked(checkbox){
      //shorten the next four lines. you can write it in one line 
-     return(checkbox.checked ? true : false);
+     return(checkbox.checked);
  };
 
 

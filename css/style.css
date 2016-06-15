@@ -22,6 +22,7 @@ span#part2{
 	margin: auto;
 	background-color: #0E981E;
 	min-height: 400px;
+	overflow: hidden;
 }
 
 #new-task-input{
@@ -62,5 +63,6 @@ footer{
 	left: 5px;
 }
 
-
-
+.task-item-holder{
+	margin-bottom: 60px;
+}
