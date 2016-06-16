@@ -2,6 +2,7 @@
 
 document.getElementById("new-task-input").addEventListener("keydown", handleKeyPress, true);
 document.getElementById('remove-done').addEventListener('click', handleRemoveButtonClick);
+document.getElementById("remove-all").addEventListener('click', handleRemoveAllButtonClick);
 
 function createTask(taskTitle) {
     var newTaskElement = document.createElement("li");
@@ -38,12 +39,11 @@ function handleKeyPress(e) {
 
 
 function isCheckboxChecked(checkbox){
-     //shorten the next four lines. you can write it in one line 
-     return(checkbox.checked);
- };
+   return(checkbox.checked);
+};
 
 
- function handleRemoveButtonClick() {
+function handleRemoveButtonClick() {
     var lists = document.querySelectorAll("li");
     for (var i = 0; i < lists.length; i++) {
         var checkboxDiv = lists[i].querySelector(".check-box");
@@ -56,7 +56,10 @@ function isCheckboxChecked(checkbox){
 };
 
 
-
+function handleRemoveAllButtonClick(){
+    var allLists = document.querySelector("#task-list");
+    allLists.parentNode.removeChild(allLists);
+};
 
 
 
