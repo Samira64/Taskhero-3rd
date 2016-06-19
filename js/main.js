@@ -4,6 +4,7 @@ document.getElementById("new-task-input").addEventListener("keydown", handleKeyP
 document.getElementById('remove-done').addEventListener('click', handleRemoveButtonClick);
 document.getElementById("remove-all").addEventListener('click', handleRemoveAllButtonClick);
 
+
 function createTask(taskTitle) {
     var newTaskElement = document.createElement("li");
     var textElement = document.createTextNode(taskTitle);
@@ -39,7 +40,7 @@ function handleKeyPress(e) {
 
 
 function isCheckboxChecked(checkbox){
-   return(checkbox.checked);
+   return checkbox.checked;
 };
 
 
@@ -51,6 +52,7 @@ function handleRemoveButtonClick() {
         checkedStatus = isCheckboxChecked(checkbox);
         if (checkedStatus){
             lists[i].parentNode.removeChild(lists[i]);
+
         }
     }  
 };
@@ -61,6 +63,17 @@ function handleRemoveAllButtonClick(){
     allLists.parentNode.removeChild(allLists);
 };
 
+
+var list = document.querySelectorAll("li");
+for (var i = 0; i < list.length; i++) {    
+    var trashDiv = list[i].querySelector(".remove-circle");  
+    trashDiv.addEventListener('click', handleRemoveItemClick); 
+};
+
+
+function handleRemoveItemClick(){ 
+     this.parentElement.remove(); 
+}; 
 
 
 
