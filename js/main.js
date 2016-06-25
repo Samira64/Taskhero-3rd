@@ -1,100 +1,71 @@
+var App = {
+    assignHandlers: function(){
+        document.getElementById("new-task-input").addEventListener("keydown", this.handleKeyPress);
+        document.getElementById('remove-done').addEventListener('click', this.handleRemoveButtonClick);
+        document.getElementById("remove-all").addEventListener('click', this.handleRemoveAllButtonClick);
+        document.querySelector('#task-list').addEventListener('click', this.handleRemoveItemClick);
+    },
+    handleKeyPress: function (e) {
+        if (e.keyCode == "13") {
+            var taskInput = document.getElementById("new-task-input");
+            var taskTitle = taskInput.value;  
+            App.createTask(taskTitle);  
+            taskInput.value = "";
+        }
+    },
+    isCheckboxChecked: function(checkbox){
+        return checkbox.checked;
+    },
+    handleRemoveButtonClick: function() {
+        var lists = document.querySelectorAll("li");
+        for (var i = 0; i < lists.length; i++) {
+            var checkboxDiv = lists[i].querySelector(".check-box");
+            var checkbox = checkboxDiv.querySelector("input");
+            checkedStatus = App.isCheckboxChecked(checkbox);
+            if (checkedStatus){
+                lists[i].parentNode.removeChild(lists[i]);
 
+            }
+        }  
+    },
 
-document.getElementById("new-task-input").addEventListener("keydown", handleKeyPress, true);
-document.getElementById('remove-done').addEventListener('click', handleRemoveButtonClick);
-document.getElementById("remove-all").addEventListener('click', handleRemoveAllButtonClick);
+    handleRemoveAllButtonClick: function(){
+        var allLists = document.querySelectorAll("#task-list li");
 
+        myfunc = function(el){
+            el.remove();
+        }
 
-function createTask(taskTitle) {
-    var newTaskElement = document.createElement("li");
-    var textElement = document.createTextNode(taskTitle);
-    var inputDiv = document.createElement("div");
-    inputDiv.className += "check-box";
-    var input = document.createElement("input");
-    input.setAttribute("type","checkbox");
-    inputDiv.appendChild(input);
-    var titleDiv= document.createElement("div");
-    titleDiv.className += "task-name";
-    titleDiv.appendChild(textElement);
-    var trashDiv = document.createElement("div");
-    trashDiv.className += "remove-circle";
-    var i = document.createElement("i");
-    i.className += "fa fa-trash";
-    trashDiv.appendChild(i);
-    newTaskElement.appendChild(inputDiv);
-    newTaskElement.appendChild(titleDiv);  
-    newTaskElement.appendChild(trashDiv);
-    var lists = document.getElementById("task-list");
-    lists.appendChild(newTaskElement);   
-};
-
-
-function handleKeyPress(e) {
-    if (e.keyCode == "13") {
-        var taskInput = document.getElementById("new-task-input");
-        var taskTitle = taskInput.value;  
-        createTask(taskTitle);  
-        taskInput.value = "";
+        allLists.forEach(myfunc)
+    },  
+    handleRemoveItemClick: function(event) {    
+        if(event.target.className == 'fa fa-trash' ) {
+            event.target.parentNode.parentNode.remove();
+        }
+    },
+    createTask: function(taskTitle) {        
+        var newTaskElement = document.createElement("li");
+        var textElement = document.createTextNode(taskTitle);
+        var inputDiv = document.createElement("div");
+        inputDiv.className += "check-box";
+        var input = document.createElement("input");
+        input.setAttribute("type","checkbox");
+        inputDiv.appendChild(input);
+        var titleDiv= document.createElement("div");
+        titleDiv.className += "task-name";
+        titleDiv.appendChild(textElement);
+        var trashDiv = document.createElement("div");
+        trashDiv.className += "remove-circle";
+        var i = document.createElement("i");
+        i.className += "fa fa-trash";    
+        trashDiv.appendChild(i);
+        newTaskElement.appendChild(inputDiv);
+        newTaskElement.appendChild(titleDiv);  
+        newTaskElement.appendChild(trashDiv);
+        var lists = document.getElementById("task-list");
+        lists.appendChild(newTaskElement);   
     }
 };
 
 
-function isCheckboxChecked(checkbox){
-   return checkbox.checked;
-};
-
-
-function handleRemoveButtonClick() {
-    var lists = document.querySelectorAll("li");
-    for (var i = 0; i < lists.length; i++) {
-        var checkboxDiv = lists[i].querySelector(".check-box");
-        var checkbox = checkboxDiv.querySelector("input");
-        checkedStatus = isCheckboxChecked(checkbox);
-        if (checkedStatus){
-            lists[i].parentNode.removeChild(lists[i]);
-
-        }
-    }  
-};
-
-
-function handleRemoveAllButtonClick(){
-    var allLists = document.querySelector("#task-list");
-    allLists.parentNode.removeChild(allLists);
-};
-
-
-var list = document.querySelectorAll("li");
-for (var i = 0; i < list.length; i++) {    
-    var trashDiv = list[i].querySelector(".remove-circle");  
-    trashDiv.addEventListener('click', handleRemoveItemClick); 
-};
-
-
-function handleRemoveItemClick(){ 
-     this.parentElement.remove(); 
-}; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+App.assignHandlers();

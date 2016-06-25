@@ -50,6 +50,11 @@ ul#task-list li{
 ul#task-list li .remove-circle{
 	float:right;
 	padding-right: 10px;
+	cursor: pointer;
+}
+
+ul#task-list li .remove-circle:hover {
+	color: #bf3737;
 }
 
 li .check-box, li .task-name, footer p{
