@@ -4,53 +4,57 @@ body{
 	color: white;
 }
 
-
-
 span#part2{
-color: #FF7800;
+	color: #FF7800;
 }
 
 .main-heading{
-font-family: "menlo";
-font-size: 72px;
-font-weight: bold;
-text-align: center;
-margin-bottom: 0px;
+	font-family: "menlo";
+	font-size: 72px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0px;
 }
 
-
 .task-hero-app{
+	position: relative;
 	width: 600px;
 	margin: auto;
 	background-color: #0E981E;
 	min-height: 400px;
+	overflow: hidden;
 }
-
 
 #new-task-input{
-width: 556px;
-padding: 20px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-border: 3px solid #27C038;
-font-size: 16px;
+	width: 556px;
+	padding: 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border: 3px solid #27C038;
+	font-size: 16px;
 }
 
-ul.task-list{
+ul#task-list{
 	list-style: none;
 	font-size: 18px;
 	padding-left: 0px;
 	background-color: #048221;
 	margin-top: 0px;
 }
-ul.task-list li{
+
+ul#task-list li{
 	border: solid 1px #00A651;
 	padding: 10px;
 }
 
-ul.task-list li .remove-circle{
+ul#task-list li .remove-circle{
 	float:right;
 	padding-right: 10px;
+	cursor: pointer;
+}
+
+ul#task-list li .remove-circle:hover {
+	color: #bf3737;
 }
 
 li .check-box, li .task-name, footer p{
@@ -58,8 +62,11 @@ li .check-box, li .task-name, footer p{
 }
 
 footer{
-	margin-left: 10px;
-	margin-top: 60px;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
 }
 
-
+.task-item-holder{
+	margin-bottom: 60px;
+}

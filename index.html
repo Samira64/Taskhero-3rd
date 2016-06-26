@@ -1,59 +1,60 @@
  <!doctype html>
  <html>
-  <head>
-    <title>hardcore engineering!</title>
-    <link rel="stylesheet"  href= "./css/style.css"/>
-    <link rel="stylesheet"  href="font-awesome/css/font-awesome.min.css"/>
-    <meta charset = "utf=8"/>
- </head>
+ <head>
+  <title>TaskHero</title>
+  <link rel="stylesheet"  href= "./css/style.css"/>
+  <link rel="stylesheet"  href="font-awesome/css/font-awesome.min.css"/>
+  <meta charset = "utf=8"/>
+</head>
 <body>
 
  <div class= "main-content">
 
-      
-     	 <h1 class="main-heading">TASK<span id="part2">HERO</span></h1>
-      
 
-     <div class="task-hero-app">
+   <h1 class="main-heading">TASK<span id="part2">HERO</span></h1>
 
- 	    <div class="enter-new-task">
- 	    <input id="new-task-input" type="text" placeholder="Enter your task here and press Enter">
- 	    </div> <!-- enter-new-task -->
 
-     <div class="task-item-holder">
+   <div class="task-hero-app">
 
- 	      <ul class="task-list">
- 		    <li>
- 			  <div class="check-box"><input type="checkbox"></div>
- 			  <div class="task-name">Buy groceries</div>
- 			  <div class= "remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            </li>
- 		    <li>
- 			  <div class="check-box"><input type="checkbox"></div>
- 			  <div class="task-name">Call dental clinic and make appointment</div>
- 			  <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            </li>
- 		    <li>
- 			  <div class="check-box"><input type="checkbox"></div>
- 			  <div class="task-name">Read the last chapter of JS book</div>
- 			  <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            </li>
- 		    <li>
- 			  <div class="check-box"><input type="checkbox"></div>
- 			  <div class="task-name">Learn more on Objects in JS</div>
- 			  <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
-            </li>
- 	      </ul> <!-- task-list -->
-     </div> <!-- task-item-holder -->
+    <div class="enter-new-task">
+      <input id="new-task-input" type="text" placeholder="Enter your task here and press Enter">
+    </div> <!-- enter-new-task -->
 
-     <footer>
-    <input type="checkbox">
-    <p>Mark all as done</p>
-     </footer>
 
-     </div> <!-- task-hero-app -->
- </div>  <!--main-content -->
+    <div class="task-item-holder">
 
- <script type="text/javascript" src= "./js/main.js"></script>
+      <ul id="task-list">
+       <li>
+        <div class="check-box"><input type="checkbox"></div>
+        <div class="task-name">Buy groceries</div>
+        <div class= "remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
+       </li>
+       <li>
+        <div class="check-box"><input type="checkbox"></div>
+        <div class="task-name">Call dental clinic and make appointment</div>
+        <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
+       </li>
+       <li>
+        <div class="check-box"><input type="checkbox"></div>
+        <div class="task-name">Read the last chapter of JS book</div>
+        <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
+       </li>
+       <li>
+        <div class="check-box"><input type="checkbox"></div>
+        <div class="task-name">Learn more on Objects in JS</div>
+        <div class="remove-circle"><i class="fa fa-trash" aria-hidden="true"></i></div>
+       </li>
+    </ul> <!-- task-list -->
+  </div> <!-- task-item-holder -->
+
+  <footer>
+    <button id="remove-done">Remove Completed Tasks</button>
+    <button id= "remove-all">Remove All Tasks</button>
+  </footer>
+
+</div> <!-- task-hero-app -->
+</div>  <!--main-content -->
+
+<script type="text/javascript" src= "./js/main.js"></script>
 </body>
 </html>
